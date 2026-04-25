@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>范立超 | 个人网站</title>
+    <meta
+      name="description"
+      content="范立超的个人网站，聚焦鸿蒙应用开发、ArkTS、ArkUI 与前端工程实践。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-mark">
+          <span class="brand-dot"></span>
+          <span id="brand-name">Portfolio</span>
+        </div>
+        <nav class="nav-links">
+          <a href="#projects">项目</a>
+          <a href="#story">关于</a>
+          <a href="#contact">联系</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero section">
+          <div class="hero-copy reveal">
+            <p class="eyebrow" id="hero-status">鸿蒙应用开发工程师</p>
+            <h1 id="hero-title">专注 HarmonyOS Next 与高质量前端开发。</h1>
+            <p class="hero-description" id="hero-description">
+              正在加载个人资料...
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" id="primary-action" href="#contact">联系我</a>
+              <a class="button button-secondary" id="secondary-action" href="#projects">查看项目</a>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal">
+            <div class="glass-stage">
+              <div class="ambient ambient-a"></div>
+              <div class="ambient ambient-b"></div>
+              <div class="device-frame">
+                <div class="device-topbar">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="device-content">
+                  <div class="signal-card">
+                    <p class="signal-label">核心能力</p>
+                    <h2 id="focus-title">ArkTS、ArkUI 与端云一体开发</h2>
+                    <p class="signal-text" id="focus-description">
+                      聚焦鸿蒙应用、组件封装、接口联调和多端交互体验。
+                    </p>
+                  </div>
+                  <div class="mini-grid" id="metric-grid"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section intro reveal" id="story">
+          <div class="section-heading">
+            <p class="eyebrow">个人概况</p>
+            <h2 id="intro-heading">关于我</h2>
+          </div>
+          <div class="intro-layout">
+            <article class="panel panel-large">
+              <p id="about-text">
+                我专注于 HarmonyOS Next 与前端项目开发，关注功能实现、交互质量与工程落地。
+              </p>
+            </article>
+            <aside class="panel quote-panel">
+              <p class="quote" id="signature-line">
+                踏实交付，持续学习，把功能、体验和可维护性一起做好。
+              </p>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section reveal" id="projects">
+          <div class="section-heading">
+            <p class="eyebrow">精选项目</p>
+            <h2>项目案例</h2>
+          </div>
+          <div class="project-grid" id="project-grid"></div>
+        </section>
+
+        <section class="section reveal">
+          <div class="section-heading">
+            <p class="eyebrow">职业背景</p>
+            <h2>工作与教育经历</h2>
+          </div>
+          <div class="experience-grid" id="experience-grid"></div>
+        </section>
+
+        <section class="section reveal">
+          <div class="section-heading">
+            <p class="eyebrow">成长路径</p>
+            <h2>学习与工作节点</h2>
+          </div>
+          <div class="timeline" id="timeline"></div>
+        </section>
+
+        <section class="section reveal" id="contact">
+          <div class="contact-banner">
+            <div>
+              <p class="eyebrow">联系信息</p>
+              <h2 id="contact-heading">期待参与鸿蒙应用、前端项目与企业级业务开发。</h2>
+            </div>
+            <div class="contact-actions" id="contact-actions"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <template id="metric-template">
+      <article class="metric-card">
+        <p class="metric-value"></p>
+        <p class="metric-label"></p>
+      </article>
+    </template>
+
+    <template id="project-template">
+      <article class="project-card">
+        <div class="project-header">
+          <p class="project-tag"></p>
+          <span class="project-year"></span>
+        </div>
+        <h3 class="project-title"></h3>
+        <p class="project-summary"></p>
+        <div class="project-footer">
+          <p class="project-impact"></p>
+          <a class="project-link" target="_blank" rel="noreferrer">查看</a>
+        </div>
+      </article>
+    </template>
+
+    <template id="experience-template">
+      <article class="panel experience-card">
+        <div class="experience-head">
+          <h3 class="experience-title"></h3>
+          <span class="experience-period"></span>
+        </div>
+        <p class="experience-company"></p>
+        <p class="experience-summary"></p>
+      </article>
+    </template>
+
+    <template id="timeline-template">
+      <article class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <p class="timeline-date"></p>
+          <h3 class="timeline-title"></h3>
+          <p class="timeline-summary"></p>
+        </div>
+      </article>
+    </template>
+
+    <template id="contact-template">
+      <a class="button button-secondary contact-link" target="_blank" rel="noreferrer"></a>
+    </template>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
