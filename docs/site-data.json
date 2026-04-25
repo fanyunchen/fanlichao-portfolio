@@ -1,0 +1,131 @@
+{
+  "profile": {
+    "name": "范立超",
+    "availability": "两年开发经验 | 鸿蒙应用开发工程师",
+    "heroTitle": "专注 HarmonyOS Next 与高质量前端开发。",
+    "heroDescription": "熟练掌握 ArkTS、ArkUI、Axios、WebView 与端云一体化能力，能够独立完成鸿蒙应用模块开发、接口联调、页面交互与多端适配。",
+    "focusTitle": "ArkTS、ArkUI 与端云一体开发",
+    "focusDescription": "覆盖自定义组件、布局体系、云函数、云数据库、权限控制、音视频播放和状态管理等核心能力。",
+    "introHeading": "面向鸿蒙生态，也具备扎实的前端工程基础",
+    "about": "我毕业于河北劳动关系职业学院软件技术专业，拥有两年开发经验。工作中主要参与鸿蒙应用与 Web 项目开发，熟悉 ArkUI 布局、自定义组件、网络请求封装、登录认证、数据存储，以及 HTML、CSS、JavaScript、Vue、MySQL 等前端与业务开发能力。",
+    "signature": "有较强的适应能力、抗压能力和理解能力，善于沟通协作，也愿意持续学习新技术。",
+    "contactHeading": "期待参与鸿蒙应用、前端项目与企业级业务开发。",
+    "primaryAction": {
+      "label": "联系我",
+      "href": "#contact"
+    },
+    "secondaryAction": {
+      "label": "查看项目",
+      "href": "#projects"
+    }
+  },
+  "metrics": [
+    {
+      "value": "2年",
+      "label": "软件开发经验"
+    },
+    {
+      "value": "4个",
+      "label": "核心项目实践"
+    },
+    {
+      "value": "ArkTS",
+      "label": "鸿蒙应用开发主力语言"
+    },
+    {
+      "value": "Vue",
+      "label": "具备 Web 前端开发能力"
+    }
+  ],
+  "projects": [
+    {
+      "category": "HarmonyOS",
+      "year": "项目一",
+      "title": "智慧校园",
+      "summary": "面向学生群体的智慧校园应用，包含校园广场、内容发布、新闻通知、登录注册、我的发布与详情等模块。",
+      "impact": "负责校园广场、内容详情、我的发布等模块开发，完成数据分类展示、下拉刷新、懒加载与登录流程接入。",
+      "link": "#projects",
+      "linkLabel": "查看技术栈"
+    },
+    {
+      "category": "HarmonyOS",
+      "year": "项目二",
+      "title": "动漫社区",
+      "summary": "面向动漫爱好者的社区型 APP，支持动漫浏览、动态交流、收藏互动与音视频播放。",
+      "impact": "封装 Axios 请求，基于 Tabs 构建首页、动态、我的三大板块，并结合 AVPlayer 完成音视频播放能力。",
+      "link": "#projects",
+      "linkLabel": "查看技术栈"
+    },
+    {
+      "category": "Web 前端",
+      "year": "项目三",
+      "title": "旅游网",
+      "summary": "PC 端旅游网站项目，包含旅行攻略、出行方式、订机票、酒店与旅行资讯等多个页面模块。",
+      "impact": "负责页面布局与样式设计，使用 Ajax 对接后端，实现响应式布局与多页面交互展示。",
+      "link": "#projects",
+      "linkLabel": "查看技术栈"
+    },
+    {
+      "category": "Web 前端",
+      "year": "项目四",
+      "title": "电商商城项目",
+      "summary": "PC 端电商商城，覆盖登录注册、商品分类、搜索筛选、购物车、订单结算与支付等完整业务流程。",
+      "impact": "完成多个业务页面开发，使用 localStorage 管理登录状态，通过动效、媒体查询、雪碧图与懒加载优化体验和性能。",
+      "link": "#projects",
+      "linkLabel": "查看技术栈"
+    }
+  ],
+  "experience": [
+    {
+      "role": "开发工程师",
+      "company": "大连天立软件有限公司",
+      "period": "2023/10 - 2025/01",
+      "summary": "参与业务项目开发，聚焦 HarmonyOS 应用与前端功能实现，负责模块开发、页面交互和接口联调等工作。"
+    },
+    {
+      "role": "软件技术",
+      "company": "河北劳动关系职业学院",
+      "period": "2020/10 - 2023/06",
+      "summary": "统招专科，系统学习软件技术相关课程，形成了前端开发、数据库和项目实践基础。"
+    },
+    {
+      "role": "专业技能",
+      "company": "HarmonyOS / Web 前端",
+      "period": "持续积累",
+      "summary": "熟练掌握 ArkTS、ArkUI、自定义组件、端云一体化、权限控制、状态管理、WebView 通讯，以及 HTML、CSS、JavaScript、Vue 和 MySQL。"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2020/10",
+      "title": "进入河北劳动关系职业学院学习软件技术",
+      "summary": "开始系统学习前端开发、数据库和软件项目实践，为后续工作打下基础。"
+    },
+    {
+      "date": "2023/06",
+      "title": "完成软件技术专业学习",
+      "summary": "毕业后正式进入开发岗位，持续积累项目实战经验。"
+    },
+    {
+      "date": "2023/10",
+      "title": "加入大连天立软件有限公司",
+      "summary": "担任开发工程师，参与 HarmonyOS 与前端项目开发工作。"
+    },
+    {
+      "date": "2025/01",
+      "title": "完成阶段性工作积累",
+      "summary": "形成两年开发经验，具备鸿蒙应用、Web 前端与基础数据库能力。"
+    }
+  ],
+  "contacts": [
+    {
+      "label": "电话 18031986975",
+      "url": "tel:18031986975"
+    },
+    {
+      "label": "邮箱 2572440106@qq.com",
+      "url": "mailto:2572440106@qq.com"
+    }
+  ]
+}
+

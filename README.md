@@ -4,10 +4,10 @@
 
 ## 项目结构
 
-- `frontend/public`：GitHub Pages 静态发布目录
+- `frontend/public`：本地前端静态目录
+- `docs`：GitHub Pages 发布目录
 - `frontend/server.js`：本地前端静态服务
 - `backend/server.js`：本地后端接口服务
-- `.github/workflows/deploy-pages.yml`：GitHub Pages 自动部署工作流
 
 ## 本地运行
 
@@ -22,4 +22,8 @@ node frontend/server.js
 
 ## GitHub Pages 发布
 
-推送到 GitHub 后，工作流会将 `frontend/public` 发布为 GitHub Pages 站点。
+推送到 GitHub 后，在仓库 `Settings -> Pages` 中选择：
+
+- Source: `Deploy from a branch`
+- Branch: `main`
+- Folder: `/docs`
