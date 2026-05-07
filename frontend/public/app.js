@@ -6,8 +6,10 @@ const refs = {
   heroStatus: document.querySelector("#hero-status"),
   heroTitle: document.querySelector("#hero-title"),
   heroDescription: document.querySelector("#hero-description"),
+  heroMeta: document.querySelector("#hero-meta"),
   focusTitle: document.querySelector("#focus-title"),
   focusDescription: document.querySelector("#focus-description"),
+  stageRibbonText: document.querySelector("#stage-ribbon-text"),
   introHeading: document.querySelector("#intro-heading"),
   aboutText: document.querySelector("#about-text"),
   signatureLine: document.querySelector("#signature-line"),
@@ -19,6 +21,8 @@ const refs = {
   contactActions: document.querySelector("#contact-actions"),
   primaryAction: document.querySelector("#primary-action"),
   secondaryAction: document.querySelector("#secondary-action"),
+  scrollProgressBar: document.querySelector("#scroll-progress-bar"),
+  topbar: document.querySelector(".topbar"),
 };
 
 function cloneTemplate(id) {
@@ -33,6 +37,16 @@ function renderMetrics(metrics) {
     card.querySelector(".metric-value").textContent = metric.value;
     card.querySelector(".metric-label").textContent = metric.label;
     refs.metricGrid.appendChild(card);
+  });
+}
+
+function renderHeroMeta(metrics) {
+  refs.heroMeta.innerHTML = "";
+  metrics.slice(0, 3).forEach((metric) => {
+    const card = cloneTemplate("#hero-meta-template");
+    card.querySelector(".meta-chip-label").textContent = metric.label;
+    card.querySelector(".meta-chip-value").textContent = metric.value;
+    refs.heroMeta.appendChild(card);
   });
 }
 
@@ -109,6 +123,7 @@ function applyData(data) {
   refs.heroDescription.textContent = data.profile.heroDescription;
   refs.focusTitle.textContent = data.profile.focusTitle;
   refs.focusDescription.textContent = data.profile.focusDescription;
+  refs.stageRibbonText.textContent = data.profile.focusDescription;
   refs.introHeading.textContent = data.profile.introHeading;
   refs.aboutText.textContent = data.profile.about;
   refs.signatureLine.textContent = data.profile.signature;
@@ -118,6 +133,7 @@ function applyData(data) {
   refs.secondaryAction.href = data.profile.secondaryAction.href;
   refs.secondaryAction.textContent = data.profile.secondaryAction.label;
 
+  renderHeroMeta(data.metrics);
   renderMetrics(data.metrics);
   renderProjects(data.projects);
   renderExperience(data.experience);
@@ -126,6 +142,10 @@ function applyData(data) {
 }
 
 function setupReveal() {
+  document.querySelectorAll(".reveal").forEach((node, index) => {
+    node.style.setProperty("--delay", `${index * 80}ms`);
+  });
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -143,15 +163,61 @@ function setupReveal() {
 
 function addStageMotion() {
   const stage = document.querySelector(".glass-stage");
+  const device = document.querySelector(".device-frame");
+  let frame = null;
+  let pointerX = 0;
+  let pointerY = 0;
+
+  function commitMotion() {
+    const x = (pointerX / window.innerWidth - 0.5) * 12;
+    const y = (pointerY / window.innerHeight - 0.5) * 12;
+    stage.style.transform = `perspective(1400px) rotateX(${-y * 0.28}deg) rotateY(${x * 0.32}deg) translateY(-4px)`;
+    device.style.transform = `translate3d(${x * 0.45}px, ${y * 0.35}px, 0)`;
+    frame = null;
+  }
 
   window.addEventListener("pointermove", (event) => {
-    const x = (event.clientX / window.innerWidth - 0.5) * 10;
-    const y = (event.clientY / window.innerHeight - 0.5) * 10;
-    stage.style.transform = `perspective(1200px) rotateX(${-y * 0.3}deg) rotateY(${x * 0.35}deg)`;
+    pointerX = event.clientX;
+    pointerY = event.clientY;
+    if (!frame) {
+      frame = window.requestAnimationFrame(commitMotion);
+    }
   });
 
   window.addEventListener("pointerleave", () => {
-    stage.style.transform = "perspective(1200px) rotateX(0deg) rotateY(0deg)";
+    stage.style.transform = "perspective(1400px) rotateX(0deg) rotateY(0deg) translateY(0)";
+    device.style.transform = "translate3d(0, 0, 0)";
+  });
+}
+
+function setupScrollEffects() {
+  function updateScrollState() {
+    const scrollTop = window.scrollY;
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollHeight > 0 ? Math.min(scrollTop / scrollHeight, 1) : 0;
+    refs.scrollProgressBar.style.transform = `scaleX(${progress})`;
+    refs.topbar.classList.toggle("compact", scrollTop > 24);
+  }
+
+  updateScrollState();
+  window.addEventListener("scroll", updateScrollState, { passive: true });
+}
+
+function setupInteractiveCards() {
+  const cards = document.querySelectorAll(".metric-card, .project-card, .experience-card, .panel, .contact-banner");
+  cards.forEach((card) => {
+    card.addEventListener("pointermove", (event) => {
+      const rect = card.getBoundingClientRect();
+      const x = ((event.clientX - rect.left) / rect.width) * 100;
+      const y = ((event.clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty("--mx", `${x}%`);
+      card.style.setProperty("--my", `${y}%`);
+    });
+
+    card.addEventListener("pointerleave", () => {
+      card.style.setProperty("--mx", "50%");
+      card.style.setProperty("--my", "50%");
+    });
   });
 }
 
@@ -190,4 +256,6 @@ async function loadSiteData() {
 
 setupReveal();
 addStageMotion();
+setupScrollEffects();
+setupInteractiveCards();
 loadSiteData();

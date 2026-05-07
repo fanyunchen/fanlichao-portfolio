@@ -23,6 +23,9 @@
           <a href="#contact">联系</a>
         </nav>
       </header>
+      <div class="scroll-progress" aria-hidden="true">
+        <span id="scroll-progress-bar"></span>
+      </div>
 
       <main>
         <section class="hero section">
@@ -32,9 +35,14 @@
             <p class="hero-description" id="hero-description">
               正在加载个人资料...
             </p>
+            <div class="hero-meta" id="hero-meta"></div>
             <div class="hero-actions">
               <a class="button button-primary" id="primary-action" href="#contact">联系我</a>
               <a class="button button-secondary" id="secondary-action" href="#projects">查看项目</a>
+            </div>
+            <div class="hero-scroll-hint">
+              <span class="scroll-dot"></span>
+              <span>向下浏览项目与经历</span>
             </div>
           </div>
 
@@ -42,6 +50,7 @@
             <div class="glass-stage">
               <div class="ambient ambient-a"></div>
               <div class="ambient ambient-b"></div>
+              <div class="ambient ambient-c"></div>
               <div class="device-frame">
                 <div class="device-topbar">
                   <span></span>
@@ -54,6 +63,12 @@
                     <h2 id="focus-title">ArkTS、ArkUI 与端云一体开发</h2>
                     <p class="signal-text" id="focus-description">
                       聚焦鸿蒙应用、组件封装、接口联调和多端交互体验。
+                    </p>
+                  </div>
+                  <div class="stage-ribbon">
+                    <span class="stage-ribbon-label">当前重心</span>
+                    <p class="stage-ribbon-text" id="stage-ribbon-text">
+                      架构抽象、复杂交互、性能与稳定性治理
                     </p>
                   </div>
                   <div class="mini-grid" id="metric-grid"></div>
@@ -122,6 +137,14 @@
       <article class="metric-card">
         <p class="metric-value"></p>
         <p class="metric-label"></p>
+        <span class="metric-glow"></span>
+      </article>
+    </template>
+
+    <template id="hero-meta-template">
+      <article class="meta-chip">
+        <span class="meta-chip-label"></span>
+        <strong class="meta-chip-value"></strong>
       </article>
     </template>
 
